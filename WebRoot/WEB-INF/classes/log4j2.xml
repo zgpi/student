@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration status="error">
+    <appenders>
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d{HH:mm:ss.SSS} %-5level %class{36}:%L %M - %msg%xEx%n"/>
+        </Console>
+         
+        <RollingFile name="Debug" fileName="logs/Debug.log"
+        		filePattern="logs/$${date:yyyy-MM}/Debug-%d{yyyyMMdd}-%i.log.gz">
+            <ThresholdFilter level="DEBUG" onMatch="ACCEPT" onMismatch="DENY"/>
+            <PatternLayout pattern="%d{yyyy.MM.dd HH:mm:ss z} %-5level DEBUG %class{36}:%L %M %n %msg%xEx%n"/>
+            <SizeBasedTriggeringPolicy size="20 MB" />
+        </RollingFile>
+        
+        <RollingFile name="Root" fileName="logs/Root.log"
+            	filePattern="logs/$${date:yyyy-MM}/Root-%d{yyyyMMdd}-%i.log.gz">
+            <ThresholdFilter level="INFO" onMatch="ACCEPT" onMismatch="DENY"/>
+            <PatternLayout pattern="%d{yyyy.MM.dd HH:mm:ss z} %-5level %class{36}:%L %M - %msg%xEx%n"/>
+            <SizeBasedTriggeringPolicy size="20 MB" />
+        </RollingFile>
+         
+        <RollingFile name="Error" fileName="logs/Error.log"
+        		filePattern="logs/$${date:yyyy-MM}/Error-%d{yyyyMMdd}-%i.log.gz">
+            <ThresholdFilter level="ERROR" onMatch="ACCEPT" onMismatch="DENY"/>
+            <PatternLayout pattern="%d{yyyy.MM.dd HH:mm:ss z} %-5level ERROR %class{36}:%L %M - %msg%xEx%n"/>
+            <SizeBasedTriggeringPolicy size="20 MB" />
+        </RollingFile>
+        
+        <RollingFile name="WebUrl" fileName="logs/WebUrl.log"
+        		filePattern="logs/$${date:yyyy-MM}/WebUrl-%d{yyyyMMdd}-%i.log.gz">
+            <ThresholdFilter level="DEBUG" onMatch="ACCEPT" onMismatch="DENY"/>
+            <PatternLayout pattern="%d{yyyy.MM.dd HH:mm:ss z} %-5level WEBURL %msg%xEx%n"/>
+            <SizeBasedTriggeringPolicy size="20 MB" />
+        </RollingFile>
+        
+        <RollingFile name="WebTime1" fileName="logs/WebTime1.log"
+        		filePattern="logs/$${date:yyyy-MM}/WebTime1-%d{yyyyMMdd}-%i.log.gz">
+            <ThresholdFilter level="DEBUG" onMatch="ACCEPT" onMismatch="DENY"/>
+            <PatternLayout pattern="%d{yyyy.MM.dd HH:mm:ss z} %-5level WEBTIME1 %msg%xEx%n"/>
+            <SizeBasedTriggeringPolicy size="20 MB" />
+        </RollingFile>
+        
+        <RollingFile name="WebTime2" fileName="logs/WebTime2.log"
+        		filePattern="logs/$${date:yyyy-MM}/WebTime2-%d{yyyyMMdd}-%i.log.gz">
+            <ThresholdFilter level="DEBUG" onMatch="ACCEPT" onMismatch="DENY"/>
+            <PatternLayout pattern="%d{yyyy.MM.dd HH:mm:ss z} %-5level WEBTIME2 %msg%xEx%n"/>
+            <SizeBasedTriggeringPolicy size="20 MB" />
+        </RollingFile>
+        
+        <RollingFile name="WebReq" fileName="logs/WebReq.log"
+        		filePattern="logs/$${date:yyyy-MM}/WebReq-%d{yyyyMMdd}-%i.log.gz">
+            <ThresholdFilter level="DEBUG" onMatch="ACCEPT" onMismatch="DENY"/>
+            <PatternLayout pattern="%n%d{yyyy.MM.dd HH:mm:ss z} %-5level WEBREQ %n %msg%xEx%n"/>
+            <SizeBasedTriggeringPolicy size="20 MB" />
+        </RollingFile>
+        
+        <RollingFile name="WebResp" fileName="logs/WebResp.log"
+        		filePattern="logs/$${date:yyyy-MM}/WebResp-%d{yyyyMMdd}-%i.log.gz">
+            <ThresholdFilter level="DEBUG" onMatch="ACCEPT" onMismatch="DENY"/>
+            <PatternLayout pattern="%n%d{yyyy.MM.dd HH:mm:ss z} %-5level WEBRESP %n %msg%xEx%n"/>
+            <SizeBasedTriggeringPolicy size="20 MB" />
+        </RollingFile>
+       
+    </appenders>
+    <loggers>
+        <root level="INFO">
+            <appender-ref ref="Console" />
+            <appender-ref ref="Root" />
+			<appender-ref ref="Error" />
+        </root>
+		<logger name="Debug" level="DEBUG" additivity="false">
+            <appender-ref ref="Console" />
+			<appender-ref ref="Debug" />
+		</logger>  
+		<logger name="WebUrl" level="DEBUG" additivity="false">
+			<appender-ref ref="WebUrl" />
+		</logger>  
+		<logger name="WebTime1" level="DEBUG" additivity="false">
+			<appender-ref ref="WebTime1" />
+		</logger>  
+		<logger name="WebTime2" level="DEBUG" additivity="false">
+			<appender-ref ref="WebTime2" />
+		</logger>  
+		<logger name="WebReq" level="DEBUG" additivity="false">
+			<appender-ref ref="WebReq" />
+		</logger>
+		<logger name="WebResp" level="DEBUG" additivity="false">
+			<appender-ref ref="WebResp" />
+		</logger>
+    </loggers>
+</configuration> 

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+ 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>menu</title>
+	<link rel="stylesheet" type="text/css" href="/student/resource/jquery-easyui/themes/default/easyui.css" />
+ 	<link rel="stylesheet" type="text/css" href="/student/resource/jquery-easyui/themes/icon.css" />
+ 	<link rel="stylesheet" type="text/css" href="/student/resource/css/icon.css" />
+    <link rel="stylesheet" type="text/css" href="/student/resource/css/menu.css" />
+    <script type="text/javascript" src="/student/resource/jquery-easyui/jquery.min.js"></script>
+    <script type="text/javascript" src="/student/resource/jquery-easyui/jquery.easyui.min.js" ></script>
+    <script type="text/javascript" src="/student/resource/js/common.js"></script>
+  </head>
+
+<body>
+	<div class="easyui-accordion" data-options="fit:true,border:false">
+           <!-- <div title="系统设置" data-options="selected:true"> -->
+                <div style="margin: 5px">
+                    <ul class="tree easyui-tree" data-options="animate:true,lines:true">
+                        <li data-options="state:'closed',iconCls:'icon-group'">
+                            <span>系统管理</span>
+                            <ul>
+                                <li data-options="iconCls:'icon-man'">
+                                	<a href="javascript:void(0)" onclick="addTab('用户列表','user/list.html')">用户管理</a>
+                                </li>
+                                <li data-options="iconCls:'icon-group_delete'">
+                                    <span>test2</span>
+                                </li>
+                                <li data-options="iconCls:'icon-group_edit'">
+                                    <span>test3</span>
+                                </li>
+                            </ul>
+                        </li>
+                        <li data-options="state:'closed',iconCls:'icon-group'">
+                            <span>档案管理</span>
+                            <ul>
+                                <li data-options="iconCls:'icon-archive'">
+                                    <span>test4</span>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+           <!--  </div>
+            <div title="系统设置2" style="padding: 10px;">
+                content2
+            </div> -->
+        </div>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.business.dao.UserMapper" >
+  <resultMap id="BaseResultMap" type="com.business.model.User" >
+    <id column="userid" property="userid" jdbcType="VARCHAR" />
+    <result column="username" property="username" jdbcType="VARCHAR" />
+    <result column="usersex" property="usersex" jdbcType="VARCHAR" />
+    <result column="userpwd" property="userpwd" jdbcType="VARCHAR" />
+  </resultMap>
+  
+  <sql id="Base_Column_List" >
+    userid, username, usersex, userpwd
+  </sql>
+  <select id="listUser" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from user_t limit #{0},#{1}
+  </select>
+  <select id="selectByUsername" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from user_t
+    where username = #{username,jdbcType=VARCHAR}
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from user_t
+    where userid = #{userid,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from user_t
+    where userid = #{userid,jdbcType=VARCHAR}
+  </delete>
+  <delete id="deleteByUserid" parameterType="java.lang.String" >
+    delete from user_t
+    where userid = #{userid,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.business.model.User" >
+    insert into user_t (userid, username, usersex, userpwd
+      )
+    values (#{id,jdbcType=VARCHAR}, #{username,jdbcType=VARCHAR}, #{usersex,jdbcType=VARCHAR}, #{userpwd,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.business.model.User" >
+    insert into user_t
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="userid != null" >
+        userid,
+      </if>
+      <if test="username != null" >
+        username,
+      </if>
+      <if test="usersex != null" >
+        usersex,
+      </if>
+      <if test="userpwd != null" >
+        userpwd,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="userid != null" >
+        #{userid,jdbcType=VARCHAR},
+      </if>
+      <if test="username != null" >
+        #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="usersex != null" >
+        #{usersex,jdbcType=VARCHAR},
+      </if>
+      <if test="userpwd != null" >
+        #{userpwd,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+</mapper>

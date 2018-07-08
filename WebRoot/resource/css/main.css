@@ -1,0 +1,113 @@
+﻿.container {
+	padding-right: 0px;
+	padding-left: 0px;
+}
+.container .panel {
+	padding:5px 0 0 0;
+}
+.container > .easyui-tabs{
+	padding:5px 0 0 0;
+}
+.container-fluid .panel .datagrid {
+	padding:5px 0 0 0;
+}
+.easyui-panel {
+	padding: 3px 0;
+}
+.container > .easyui-tabs > .tabs-panels > .panel{
+	padding-top:0;
+} 
+
+.group{
+    list-style: none;
+    margin: 5px 0 0 0;
+    display: block;
+    clear: both;
+    padding-left: 0px;
+}
+
+.group .component,.form .component {
+    margin: 5px 0 5px 10px;
+    float: left;
+    white-space: nowrap;
+    min-width: 233px;
+    height: 28px;
+}
+.group .component-textarea {
+    margin: 5px 0 5px 10px;
+    white-space: nowrap;
+    min-width: 228px;
+    min-height: 66px;
+}
+.component .textbox {
+    width: 130px ;
+    box-sizing: content-box !important;
+}
+
+.component > select {
+    width: 130px !important;
+    margin-top: 6px;
+    border: 1px solid #adadad;
+    padding: 2px;
+    box-sizing: border-box;;
+}
+
+.label {
+    display: inline-block;
+    text-align: right;
+    vertical-align: middle;
+    padding: 5px;
+    white-space: normal;
+    width: 150px;
+    color: #333;
+    font-weight:normal;
+    left: 23px;
+    margin: 0px;
+    max-width: 150px;
+    font-size: 12px;
+    word-break: break-all;
+}
+
+.panel-search {
+    border-top: 1px solid #888888;
+    margin: 20px 18px 15px;
+    padding-top: 15px;
+    position: relative;
+    width: 95%;
+}
+.panel-search .title {
+    cursor: pointer;
+    background: none repeat scroll 0 0 #f2f2f2;
+    color: #222;
+    font-size: 12px;
+    left: 0;
+    padding: 3px 10px 3px 3px;
+    position: absolute;
+    top: -12px;
+    background-position: 0 0px;
+}
+.panel-search .drop {
+    background: none repeat scroll 0 0 #f2f2f2;
+    font-size: 12px;
+    padding-left: 10px;
+    position: absolute;
+    right: 0;
+    top: -12px;
+}
+.panel-search .drop a {
+    background: url("../img/icon_check_down.png") no-repeat scroll right center transparent;
+    color: #000000;
+    cursor: pointer;
+    padding-right: 18px;
+}
+
+.panel-search input, .panel-search select {
+    /* margin: 4px 4px 6px 4px; */
+    padding: 2px 1px 2px 1px;
+    margin-top: 6px;
+    border-radius: 5px;
+}
+
+.searchForm {
+    padding: 0 0 0 0;
+}

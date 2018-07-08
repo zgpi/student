@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Client Side Pagination in DataGrid - jQuery EasyUI Demo</title>
+	<script type="text/javascript" src="/student/resource/jquery-easyui/jquery.min.js"></script>
+</head>
+<body>
+	<h2>Client Side Pagination in DataGrid</h2>
+	
+	<script type="text/javascript">
+		$.ajax({
+       		type: "POST",
+        	url: "/student/sys/listUser.do",
+        	data: {},
+       		dataType: "json",
+        	success: function(data){
+        		alert("success!!!");
+            },
+            error: function(e){
+            	console.info(e);
+            }
+    	});	
+	</script>
+</body>
+</html>

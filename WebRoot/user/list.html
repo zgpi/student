@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+ 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>用户列表</title>
+	<link rel="stylesheet" type="text/css" href="/student/resource/jquery-easyui/themes/default/easyui.css" />
+ 	<link rel="stylesheet" type="text/css" href="/student/resource/jquery-easyui/themes/icon.css" />
+    <link rel="stylesheet" type="text/css" href="/student/resource/css/main.css" />   
+  </head>
+
+<body>
+<div class="container">
+	<div id="p" class="easyui-panel" title="查询条件" style="width:100%;" data-options="tools:'#t',collapsible:true">
+		<form id="searchForm" class="searchForm" method="post">
+		<div class="group">
+			<div class="component">
+				<span class="lable">姓名:</span>
+				<input name="username" class="easyui-textbox">
+			</div>
+			<div class="component">
+				<span class="lable">性别:</span>
+				<select name="usersex" class="easyui-combobox" data-options="editable:false, panelHeight:'auto'">
+                    <option value="0"></option>
+                    <option value="1">男</option>
+                    <option value="2">女</option>
+                </select>
+			</div>
+		</div>
+		</form>
+		<div class="search">
+			<a onclick="query()" class="easyui-linkbutton enter-click" data-options="iconCls:'icon-search'">查询</a>
+			<a href="javascript:reset()" class="easyui-linkbutton" data-options="iconCls:'icon-undo'">重置</a>
+	    </div>
+	</div>
+	<div id="autoHeight" class="panel-table">
+		<table id="tb" class="easyui-datagrid"></table>
+	</div>
+</div>
+<script type="text/javascript" src="/student/resource/jquery-easyui/jquery.min.js"></script>
+<script type="text/javascript" src="/student/resource/jquery-easyui/jquery.easyui.min.js" ></script>
+<script type="text/javascript" src="/student/resource/jquery-easyui/locale/easyui-lang-zh_CN.js"></script>
+<script type="text/javascript" src="/student/resource/js/common.js"></script>
+<script type="text/javascript" src="/student/resource/js/plugins.js?ver=1"></script>
+<script type="text/javascript" src="js/user.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		//定义表格自适应高度
+		autoFitWindowRestHeight('autoHeight', null, 100, null, function() {
+			if ($('#tb').length) {
+				$('#tb').datagrid('resize');
+			}
+		});
+		//初始化表格
+		initDatagrid();
+	});
+	
+</script>
+</body>
+</html>
